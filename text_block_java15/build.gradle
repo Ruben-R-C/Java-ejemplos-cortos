@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+application {
+    // Define the main class for the application
+    mainClassName = 'org.ruben.java.reflexion.App'
+}
+
+sourceCompatibility = 15
+targetCompatibility = 15
+task wrapVersion(type: Wrapper) {
+   gradleVersion = '7.2' 
+}
+
+
