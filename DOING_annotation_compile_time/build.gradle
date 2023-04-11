@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    // Define the main class for the application
+    mainClassName = 'org.ruben.java.annotation.App'
+}
+
+
+//com.google.auto.service:auto-service:1.0-rc2
+dependencies {
+    implementation 'com.google.auto.service:auto-service:1.0-rc2'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+task wrapVersion(type: Wrapper) {
+   gradleVersion = '5.6' 
+}
+
