@@ -15,7 +15,7 @@ import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import javax.xml.transform.Source;
 import javax.lang.model.type.ExecutableType;
-
+import javax.tools.Diagnostic;
 import com.google.auto.service.AutoService;
 
 @SupportedAnnotationTypes("org.ruben.java.annotation.dominio.BuilderProperty") //podemos usar varias anotaciones "org.ruben.java.annotation.*"
@@ -38,7 +38,20 @@ public class BuilderProcessor extends AbstractProcessor {
             List<Element> setters = annotatedMethods.get(true);
             List<Element> otherMethods = annotatedMethods.get(false);
             
-            // …
+
+            otherMethods.forEach(element -> processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR,
+            "@BuilderProperty must be applied to a setXxx method with a single argument", element));
+
+            if (setters.isEmpty()) {
+                continue;
+            }
+
+            String className = ((TypeElement) setters.get(0).getEnclosingElement()).getQualifiedName().toString();
+
+            Map<String, String> setterMap = setters.stream().collect(Collectors.toMap(
+                setter -> setter.getSimpleName().toString(),
+                setter -> ((ExecutableType) setter.asType()).getParameterTypes().get(0).toString()
+                ));
         }
         return false; //devuelve true cuando ha termiando de procesar todas las anotaciones y false para continuar
     }
