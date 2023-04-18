@@ -1,0 +1,24 @@
+
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    implementation 'commons-io:commons-io:2.4'
+}
+
+application {
+    mainClassName = 'org.ruben.java.inputStream.App'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+task wrapVersion(type: Wrapper) {
+   gradleVersion = '5.6'
+}
