@@ -9,6 +9,10 @@ public class EnumBasico {
 	public static void main(String[] args) {
 		Color c1 = Color.RED;
 		System.out.println(c1);
+		
+		String c2 = Color.GREEN.name();
+		System.out.println(c2);
+		
 	}
 
 }
