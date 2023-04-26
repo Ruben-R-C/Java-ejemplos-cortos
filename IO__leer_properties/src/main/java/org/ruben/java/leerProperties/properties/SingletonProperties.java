@@ -1,14 +1,8 @@
 package org.ruben.java.leerProperties.properties;
-
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
-import java.nio.file.Path;
 import java.util.Properties;
-import java.util.stream.Collectors;
 
 
 /*
