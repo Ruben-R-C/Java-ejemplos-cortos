@@ -1,5 +1,9 @@
 package org.ruben.java.leerProperties.properties;
 
+import static org.ruben.java.leerProperties.properties.SingletonProperties.getRutaFicheroPropiedades;
+
+import java.net.URL;
+
 public enum Prop implements getValueInteface{
     NUMERO_DE_HILOS {
         @Override
@@ -14,12 +18,10 @@ public enum Prop implements getValueInteface{
         }
     };
 
+    public final static String  ARCHIVO_PROPIEDADES = "/ejemplo.properties";
+    private static final URL RUTA_ARCHIVO_PROPERTIES = getRutaFicheroPropiedades(ARCHIVO_PROPIEDADES);
+
     private static String getValor(String clave){
-        return SingletonProperties.getInstance(ARCHIVO_PROPERTIES).getValor(clave);
-
+        return SingletonProperties.getInstance(RUTA_ARCHIVO_PROPERTIES).getValor(clave);
     }
-
-
-    private static final String ARCHIVO_PROPERTIES = "src/main/resources/ejemplo.properties";
-	
 }
