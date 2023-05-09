@@ -13,6 +13,10 @@ public class EnumBasico {
 		String c2 = Color.GREEN.name();
 		System.out.println(c2);
 		
+		for (Color col : Color.values()) { 
+                      System.out.println(col); 
+                }
+		
 	}
 
 }
