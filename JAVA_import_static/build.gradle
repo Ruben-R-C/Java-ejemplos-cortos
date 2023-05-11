@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+application {
+    mainClassName = 'org.ruben.java.importStatic.App'
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+task wrapVersion(type: Wrapper) {
+   gradleVersion = '5.6' 
+}
+
