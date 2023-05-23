@@ -1,0 +1,3 @@
+https://www.baeldung.com/java-regex-text-after-match
+
+https://docs.oracle.com/javase/tutorial/i18n/text/stream.html
