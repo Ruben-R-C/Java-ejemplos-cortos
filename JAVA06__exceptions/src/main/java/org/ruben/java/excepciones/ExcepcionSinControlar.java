@@ -3,7 +3,7 @@ package org.ruben.java.excepciones;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
-public class ExcepcionNoControlada {
+public class ExcepcionSinControlar {
 
 	private static String NUMERO = "123213";
 	
@@ -11,7 +11,7 @@ public class ExcepcionNoControlada {
 	public static void main(String[] args) {
 		
 		
-		ExcepcionNoControlada main = new ExcepcionNoControlada();
+		ExcepcionSinControlar main = new ExcepcionSinControlar();
 		main.tratarExcepcionesControladas(NUMERO);
 		main.tratarExcepcionesNoControladas(NUMERO);
 	}
