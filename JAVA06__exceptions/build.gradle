@@ -1,12 +1,7 @@
 plugins {
     id 'java'
-    id 'application'
 }
 
-application {
-    // Define the main class for the application
-    mainClassName = 'org.ruben.java.reflexion.App'
-}
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

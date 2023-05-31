@@ -1,4 +1,4 @@
-package org.ruben.java.errorNoControlado;
+package org.ruben.java.excepciones;
 
 public class CapturarErrorNoControlado {
 
