@@ -1,24 +1,32 @@
 package org.ruben.java.customExcepcion.domain;
 
 
-public abstract class AppExcepcion extends Exception
+public class AppExcepcion extends Exception
 {
-	private String aplicacion,version, tipoError, descripcion;
+	private static final AppVersion APP_VERSION;
+	private String tipoError, descripcion;
 
 
-    public AppExcepcion(String aplicacion, String versionApp, String[] description, Exception exception)
+    public AppExcepcion(Exception exception, String... description)
 	{
 		super(exception);
-		cons( aplicacion, versionApp, getText(description), exception.toString());
+		cons( getText(description), exception.toString());
 	}
 
-	private final void cons( String sAplicacion, String sVersionApp, String description, String tipoError)
+	static {
+		APP_VERSION = AppVersion.extraerAplicacionVersion();                         
+	}
+
+
+
+	private final void cons( String description, String tipoError)
 	{
-		this.aplicacion = sAplicacion;
-		this.version = sVersionApp;
         this.descripcion = description;
 		this.tipoError = tipoError;
 	}
+
+
+
 
 
 	public final String getMessage()
@@ -30,14 +38,13 @@ public abstract class AppExcepcion extends Exception
 	public final String toString()
 	{
 		StringBuffer sb = new StringBuffer();
-		sb.append("[");
-		sb.append(aplicacion);
-        sb.append("_");
-        sb.append(version);
-		sb.append("] ");
+		//sb.append(System.lineSeparator());
+		sb.append(APP_VERSION);
+		sb.append(" ");
 		sb.append(descripcion);
-        sb.append(" --- ");
+		sb.append(" [");
         sb.append(tipoError);
+		sb.append("] ");
         return sb.toString();
 	}
 

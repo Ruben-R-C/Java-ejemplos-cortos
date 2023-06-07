@@ -1,36 +1,31 @@
 package org.ruben.java.customExcepcion;
 
-import org.ruben.java.customExcepcion.domain.FuncionalException;
+import org.ruben.java.customExcepcion.domain.AppExcepcion;
 
 public class CustomException {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AppExcepcion   {
+            hacerAlgo();
+    }
+
+    private static void hacerAlgo() throws AppExcepcion  {
+        System.out.println("hacerAlgo()");
 
         try {
             lanzoErrorFuncional();
-            lanzoErrorFuncional2();
-        } catch (FuncionalException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            //System.out.println(e.toString());
+        } catch (AppExcepcion e) {
+            throw new AppExcepcion(e, "Error al hacer algo");
         }
-
     }
 
-    private static void lanzoErrorFuncional() throws FuncionalException {
+
+    private static void lanzoErrorFuncional() throws AppExcepcion {
+        System.out.println("lanzoErrorFuncional()");
         try {
             int a = 1 / 0;
         } catch (ArithmeticException e) {
-            throw new FuncionalException(e, "Error al dividir por 0");
+            throw new AppExcepcion (e, "Error al dividir por 0");
         }
-
-    }
-
-
-    private static void lanzoErrorFuncional2() throws FuncionalException {
-        
-            throw new FuncionalException("Error al dividir por 0");
-        
-
     }
 }
+
