@@ -6,6 +6,9 @@ import java.util.regex.Pattern;
 public class PracticaRegex {
 
     public static void main(String[] args) {
+        
+        //strfamilia.replaceFirst ("^0*", strfamilia); //quitar los ceros del inicio      
+        
         // Queremos el String "Java is cool"
         final String TEXTO = "Some text. targetValue=Java is cool. some other text";
 
