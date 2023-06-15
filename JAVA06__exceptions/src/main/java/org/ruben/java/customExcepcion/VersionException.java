@@ -2,7 +2,7 @@ package org.ruben.java.customExcepcion;
 
 import org.ruben.java.customExcepcion.domain.AppExcepcion;
 
-public class CustomException {
+public class VersionException {
 
     public static void main(String[] args) throws AppExcepcion   {
             hacerAlgo();

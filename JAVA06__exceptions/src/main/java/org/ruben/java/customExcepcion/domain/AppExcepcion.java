@@ -17,15 +17,11 @@ public class AppExcepcion extends Exception
 		APP_VERSION = AppVersion.extraerAplicacionVersion();                         
 	}
 
-
-
 	private final void cons( String description, String tipoError)
 	{
         this.descripcion = description;
 		this.tipoError = tipoError;
 	}
-
-
 
 
 
