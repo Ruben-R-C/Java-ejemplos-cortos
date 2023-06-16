@@ -1,0 +1,40 @@
+apply plugin: 'java'//para "gradle build"
+apply plugin: 'application'//para para "gradle run"
+def clasePrincipal = 'org.ruben.annotationUser.App'
+mainClassName = "$clasePrincipal" //clase principal para "gradlew -q run"
+
+//TODOS LOS PROYECTOS
+allprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8 
+
+
+}
+
+project(':Annotation-Processing') {
+    dependencies {
+        compileOnly 'com.google.auto.service:auto-service:1.0-rc4'
+        annotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
+    }
+
+    //compileJava {
+    //    options.annotationProcessorPath = configurations.annotationProcessor
+    //}
+}
+
+dependencies {
+    implementation project(':Annotation-Processing')
+    annotationProcessor project(':Annotation-Processing')
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.google.auto.value:auto-value-annotations:1.6' //para que el editor encuentre las clases autogeneradas
+    annotationProcessor 'com.google.auto.value:auto-value:1.6'        //para que el editor encuentre las clases autogeneradas
+}
+
+task wrapVersion(type: Wrapper) {
+   gradleVersion = '5.6'
+}
