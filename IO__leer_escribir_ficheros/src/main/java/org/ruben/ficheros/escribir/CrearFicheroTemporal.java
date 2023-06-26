@@ -38,7 +38,7 @@ public class CrearFicheroTemporal {
         try {
             File tempFile = File.createTempFile("pruebaRUben",
                     ".txt",
-                    new File("C:/Users/99GU8572/Desktop"));
+                    new File("C:/Users/Ruben/Desktop"));
             tempFile.deleteOnExit();
             mostrarRuta(tempFile);
 
