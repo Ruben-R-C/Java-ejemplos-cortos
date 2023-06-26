@@ -10,7 +10,7 @@ import java.io.BufferedReader;
 
 public class UsandoRuntime {
         public static void main(String[] args) {
-                mostrarDirectoriosConsola("\"C:/Users/99GU8572/Desktop/\"");
+                mostrarDirectoriosConsola("\"C:/Users/Ruben/Desktop/\"");
         }
 
         private static void mostrarDirectoriosConsola(String homeDirectory) {
